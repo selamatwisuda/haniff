@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nipp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🎓</text></svg>">  
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+    }
+  </style>
+</head>
+
+<body class="bg-[#FCFAF6] text-[#4B2E2E] overflow-hidden">
+
+  <section class="w-screen h-screen flex flex-col items-center justify-center px-4 text-center relative">
+    
+    <!-- Confetti Layer -->
+    <canvas id="confetti-canvas" class="absolute inset-0 pointer-events-none z-0"></canvas>
+
+    <!-- Main Content -->
+    <div class="z-10">
+      <h1 class="text-4xl md:text-5xl mb-2 text-[#856959]">Congraduations, Nip 🎓</h1>
+
+      <img src="foto.jpg" alt="Foto Nana" class="rounded-xl shadow-md w-36 h-48 object-cover mx-auto my-4 border border-[#DDD0C8]">
+
+      <p class="text-lg font-semibold text-[#3B2C24]">Hanif Syahri Ramadhani, S.Kom</p>
+      <p class="text-sm text-gray-600 italic mt-1 mb-4 max-w-md mx-auto">Every step brings you closer to the future you’ve once imagined. I hope the world is kind to you, and your dreams find their way home.</p>
+
+      <a href="warning.html" class="inline-block bg-[#EEE7DE] text-[#4B2E2E] px-6 py-3 rounded-full shadow-md hover:bg-[#e0d4c8] transition-all font-semibold">
+        💌 Read Your Letters
+      </a>
+
+      <p class="mt-6 text-xs text-gray-400">with warmth and sprinkles of love 🌻</p>
+    </div>
+  </section>
+
+  <script>
+    function startConfettiLoop() {
+      confetti({
+        particleCount: 100,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+      setInterval(() => {
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: Math.random() * 0.6 + 0.2 }
+        });
+      }, 2500);
+    }
+    window.addEventListener('DOMContentLoaded', startConfettiLoop);
+  </script>
+</body>
+</html>
